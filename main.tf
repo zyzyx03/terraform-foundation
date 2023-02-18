@@ -91,6 +91,6 @@ resource "aws_instance" "dev_node" {
       identityfile = "~/.ssh/mtckey"
     })
      
-    interpreter = var.host_os ?  ["bash", "-c"] : ["Powershell", "Command"]
+    interpreter = var.host_os == "linux" ?  ["bash", "-c"] : ["Powershell", "Command"]
   }
 }
